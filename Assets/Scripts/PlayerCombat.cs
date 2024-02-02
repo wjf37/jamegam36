@@ -10,12 +10,14 @@ public class PlayerCombat : MonoBehaviour
     public LayerMask enemyLayer;
     public List<AnimationClip> attackAnimations;
     public AudioSource audioSource;
+    public HealthBar healthBar;
     private Vector2 mousePos;
     private int currentHealth;
     private Transform animations;
     private Transform spriteTransform;
     public AudioClip attacked;
     private GameManager gameManager;
+    private SpriteRenderer pSprite;
 
     // Start is called before the first frame update
     void Start()
@@ -24,6 +26,7 @@ public class PlayerCombat : MonoBehaviour
         animations = transform.Find("Combat Direction/AnimationPlayer");
         spriteTransform = transform.Find("Sprite");
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        pSprite = spriteTransform.gameObject.GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -42,7 +45,8 @@ public class PlayerCombat : MonoBehaviour
     }
 
     public void TakeDamage(int damage){
-        //currentHealth -= damage;
+        currentHealth -= damage;
+        healthBar.UpdateHealth(currentHealth);
         audioSource.PlayOneShot(attacked);
         StartCoroutine(Shake());
         if (currentHealth<0){
@@ -68,7 +72,7 @@ public class PlayerCombat : MonoBehaviour
     IEnumerator Shake(){
         Vector3 originalPosition = spriteTransform.position;
         float elapsed = 0f;
-
+        pSprite.material.color = Color.red;
         while (elapsed < 0.2f)
         {
             float x = originalPosition.x + Random.Range(-0.1f, 0.1f) * 1;
@@ -79,7 +83,7 @@ public class PlayerCombat : MonoBehaviour
 
             yield return null;
         }
-
+        pSprite.material.color = Color.white;
         // Reset to the original position after shaking
         spriteTransform.position = originalPosition;
     }

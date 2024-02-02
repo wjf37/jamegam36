@@ -19,7 +19,6 @@ public class GameManager : MonoBehaviour
     public GameObject aimWeapon;
     public GameObject failScreen;
     public GameObject winScreen;
-    public TextMeshProUGUI gameOverText;
     public Animator playerAnim;
     private bool paused = false;
     private PlayerCombat pCScript;
@@ -72,20 +71,15 @@ public class GameManager : MonoBehaviour
 
     public void GameOver(){
         isGameActive = false;
-        gOText = "Meditation Failed";   
         Time.timeScale = 0;
         failScreen.SetActive(true);
-        StartCoroutine(EndGame(gOText));
-
         //SceneManager.LoadScene(1);
     }
     
     public  void Win(){
         isGameActive = false;
-        gOText = "Meditation Successful"; 
         Time.timeScale = 0;
         winScreen.SetActive(true);
-        StartCoroutine(EndGame(gOText));
         //SceneManager.LoadScene(1);
     }
 
@@ -141,12 +135,6 @@ public class GameManager : MonoBehaviour
         aWScript.counterDuration = 1f;
         aWScript.baseDamage = 40;
         playerAnim.SetFloat("animSpeed",1f);
-    }
-
-    IEnumerator EndGame(string gOText){
-        gameOverText.text = gOText;
-        gameOverText.gameObject.SetActive(true);;
-        yield return new WaitForSeconds(3f);
     }
 
     public void B2Menu(){
