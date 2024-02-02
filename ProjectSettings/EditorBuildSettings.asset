@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 300c30faa397bba4e89107af10b860bd
+  - enabled: 1
+    path: Assets/Scenes/Temple.unity
+    guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/Spirit World.unity
+    guid: 39d7b96546a240347a70e6389a7b64c9
+  m_configObjects: {}
