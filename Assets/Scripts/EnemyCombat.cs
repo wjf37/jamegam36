@@ -9,6 +9,7 @@ public class EnemyCombat : MonoBehaviour
     public float attackCooldown = 2f;
     public bool attackStance = false;
     public bool deflected;
+    [SerializeField] Sprite[] enemySprites;
     private Transform attackRange;
     private int currentHealth; 
     private Rigidbody2D enemyRb;
@@ -22,22 +23,30 @@ public class EnemyCombat : MonoBehaviour
     private Transform spriteTransform;
     private AudioSource audioSource;
     private PlayerCombat playerCombat;
+    private SpriteOutline spriteOutline;
+    private GameObject brokenPosture;
 
     // Start is called before the first frame update
     void Start()
     {
         currentHealth = maxHealth;
+        
         playerRb = GameObject.Find("Player").GetComponent<Rigidbody2D>();
         enemyRb = GetComponent<Rigidbody2D>();
+        
         attackRange = transform.Find("AttackRange");
-        sprite = transform.Find("Enemy Sprite").GetComponent<SpriteRenderer>();
-        spriteTransform = transform.Find("Enemy Sprite");
-        attackSprite = transform.Find("AttackRange/Animations").GetComponent<SpriteRenderer>();
+        spriteTransform = transform.GetChild(0);
+        sprite = spriteTransform.GetComponent<SpriteRenderer>();
+        spriteOutline = spriteTransform.GetComponent<SpriteOutline>();
+
+        animations = transform.GetChild(1).GetChild(0);
+        attackSprite = animations.GetComponent<SpriteRenderer>();
         attackSprite.enabled = false;
-        animator = transform.Find("AttackRange/Animations").GetComponent<Animator>();
-        animations = transform.Find("AttackRange/Animations");
+        animator = animations.GetComponent<Animator>();
+        
         audioSource = GameObject.Find("Audio Source").GetComponent<AudioSource>();
         playerCombat = GameObject.Find("Player").GetComponent<PlayerCombat>();
+        brokenPosture = transform.GetChild(2).gameObject;
     }
 
     // Update is called once per frame
@@ -46,6 +55,10 @@ public class EnemyCombat : MonoBehaviour
         EnemyPlayerRange();
         if(deflected == true){
             StartCoroutine(Deflected());
+        }
+        if (!isAttacking && inRange)
+        {
+            StartCoroutine(AttackSequence());
         }
     }
     public void TakeDamage(int damage){
@@ -69,10 +82,6 @@ public class EnemyCombat : MonoBehaviour
     
     void OnTriggerEnter2D(){
         inRange = true;
-        if (!isAttacking)
-        {
-            StartCoroutine(AttackSequence());
-        }
     }
 
     void OnTriggerExit2D(){
@@ -82,9 +91,10 @@ public class EnemyCombat : MonoBehaviour
     IEnumerator AttackSequence(){
         isAttacking = true;
         //Enemy turns red
-        sprite.material.color = new Color(0.8f,0,0,1);
+        //sprite.material.color = new Color(0.8f,0,0,1);
+        spriteOutline.enabled = true;
         attackStance = true;
-        
+        sprite.sprite = enemySprites[1];
         attackSprite.enabled = true;
         enemyRb.constraints |= RigidbodyConstraints2D.FreezePosition;
         
@@ -92,13 +102,17 @@ public class EnemyCombat : MonoBehaviour
         // Reset color and set attacking state
         if(deflected == true){
             enemyRb.constraints &= ~RigidbodyConstraints2D.FreezePosition;
-            isAttacking = false;
             attackStance = false;
+            spriteOutline.enabled = false;
+            sprite.sprite = enemySprites[0];
             attackSprite.enabled = false;
             yield return new WaitForSeconds(attackCooldown);
+            isAttacking = false;
             yield break;
         }
-        sprite.material.color = Color.white;
+        //sprite.material.color = Color.white;
+        spriteOutline.enabled = false;
+        sprite.sprite = enemySprites[0];
         attackStance = false;
 
         animator.SetTrigger("enemyAttack");
@@ -108,9 +122,9 @@ public class EnemyCombat : MonoBehaviour
         Debug.Log("Enemy is attacking!");
         enemyRb.constraints &= ~RigidbodyConstraints2D.FreezePosition;
 
-        isAttacking = false;
         attackSprite.enabled = false;
         yield return new WaitForSeconds(attackCooldown);
+        isAttacking = false;
     }
 
     void FlipSprite(float z){
@@ -143,10 +157,14 @@ public class EnemyCombat : MonoBehaviour
     }
 
     IEnumerator Deflected(){
-        sprite.material.color = Color.yellow;
+        isAttacking = true;
+        brokenPosture.SetActive(true);
+        spriteOutline.enabled = false;
+        sprite.sprite = enemySprites[0];
         attackSprite.enabled = false;
         yield return new WaitForSeconds(1f);
+        isAttacking = false;
+        brokenPosture.SetActive(false);
         deflected = false;
-        sprite.material.color = Color.white;
     }
 }

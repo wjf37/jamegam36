@@ -139,5 +139,6 @@ public class GameManager : MonoBehaviour
 
     public void B2Menu(){
         SceneManager.LoadScene(0);
+        Time.timeScale = 1f;
     }
 }

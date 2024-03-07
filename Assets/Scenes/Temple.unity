@@ -1886,6 +1886,28 @@ PrefabInstance:
       propertyPath: m_Name
       value: Candle
       objectReference: {fileID: 0}
+    - target: {fileID: 8642106479144932564, guid: ef2cdcceb19c3154c9fb06afb2d4c857,
+        type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: ce20f06bdd2172d4da8e459d449a91f1,
+        type: 2}
+    - target: {fileID: 8642106479144932564, guid: ef2cdcceb19c3154c9fb06afb2d4c857,
+        type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 1975081247066274518, guid: ce20f06bdd2172d4da8e459d449a91f1,
+        type: 2}
+    - target: {fileID: 8642106479144932564, guid: ef2cdcceb19c3154c9fb06afb2d4c857,
+        type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9159718133897988772, guid: ef2cdcceb19c3154c9fb06afb2d4c857,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
