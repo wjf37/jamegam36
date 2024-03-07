@@ -56,7 +56,7 @@ public class EnemyCombat : MonoBehaviour
         if(deflected == true){
             StartCoroutine(Deflected());
         }
-        if (!isAttacking && inRange)
+        if (!isAttacking && inRange && !deflected)
         {
             StartCoroutine(AttackSequence());
         }
@@ -92,7 +92,7 @@ public class EnemyCombat : MonoBehaviour
         isAttacking = true;
         //Enemy turns red
         //sprite.material.color = new Color(0.8f,0,0,1);
-        spriteOutline.enabled = true;
+        spriteOutline.UpdateOutline(3);
         attackStance = true;
         sprite.sprite = enemySprites[1];
         attackSprite.enabled = true;
@@ -103,7 +103,7 @@ public class EnemyCombat : MonoBehaviour
         if(deflected == true){
             enemyRb.constraints &= ~RigidbodyConstraints2D.FreezePosition;
             attackStance = false;
-            spriteOutline.enabled = false;
+            spriteOutline.UpdateOutline(0);
             sprite.sprite = enemySprites[0];
             attackSprite.enabled = false;
             yield return new WaitForSeconds(attackCooldown);
@@ -111,7 +111,7 @@ public class EnemyCombat : MonoBehaviour
             yield break;
         }
         //sprite.material.color = Color.white;
-        spriteOutline.enabled = false;
+        spriteOutline.UpdateOutline(0);
         sprite.sprite = enemySprites[0];
         attackStance = false;
 
@@ -157,13 +157,11 @@ public class EnemyCombat : MonoBehaviour
     }
 
     IEnumerator Deflected(){
-        isAttacking = true;
         brokenPosture.SetActive(true);
-        spriteOutline.enabled = false;
+        spriteOutline.UpdateOutline(0);
         sprite.sprite = enemySprites[0];
         attackSprite.enabled = false;
         yield return new WaitForSeconds(1f);
-        isAttacking = false;
         brokenPosture.SetActive(false);
         deflected = false;
     }

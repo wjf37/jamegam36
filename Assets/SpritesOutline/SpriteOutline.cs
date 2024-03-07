@@ -16,7 +16,7 @@ public class SpriteOutline : MonoBehaviour {
 		}
 	}
 	[SerializeField]
-	private float _outlineSize = 3;
+	private float _outlineSize = 0;
 
 	private Material _preMat;
 
@@ -28,9 +28,10 @@ public class SpriteOutline : MonoBehaviour {
 
 	void OnDisable() {
 		spriteRenderer.sharedMaterial = _preMat;
+		Debug.Log("disabled");
 	}
 
-	void UpdateOutline(float outline) {
+	public void UpdateOutline(float outline) {
 		MaterialPropertyBlock mpb = new MaterialPropertyBlock();
 		spriteRenderer.GetPropertyBlock(mpb);
 		mpb.SetFloat("_OutlineSize", outline);

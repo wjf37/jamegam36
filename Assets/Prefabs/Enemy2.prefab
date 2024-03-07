@@ -399,14 +399,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2783841171974532966}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 86a72247d5aa84112962198463a3c864, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   color: {r: 1, g: 0, b: 0, a: 1}
   _spriteRenderer: {fileID: 8406489691060376889}
-  _outlineSize: 3
+  _outlineSize: 0
 --- !u!1 &4246316305646829947
 GameObject:
   m_ObjectHideFlags: 0
