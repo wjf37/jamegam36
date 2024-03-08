@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Spirit World.unity
     guid: 39d7b96546a240347a70e6389a7b64c9
+  - enabled: 1
+    path: Assets/Scenes/Temple Day.unity
+    guid: b27595d526ad5bb47baa4f059f8fe1de
   m_configObjects: {}

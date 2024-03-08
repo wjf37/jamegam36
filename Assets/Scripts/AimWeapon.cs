@@ -58,7 +58,6 @@ public class AimWeapon : MonoBehaviour
         enemyInRange = false;
     }
     void Attack(){
-        Debug.Log("Player Attack:" + enemyToAttack);
         enemyScript.TakeDamage(baseDamage);
         aPScript.ChooseAnim("basicAttack");
     }

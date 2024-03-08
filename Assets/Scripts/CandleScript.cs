@@ -25,14 +25,12 @@ public class CandleScript : MonoBehaviour
     }
 
     void OnTriggerEnter2D(Collider2D other){
-        Debug.Log("Trigger enter");
         if(other.CompareTag("InteractionHitbox")){
             colliding = true;
         }
     }
 
     void OnTriggerExit2D(Collider2D other){
-        Debug.Log("Trigger exit");
         if(other.CompareTag("InteractionHitbox")){
             colliding = false;
         }

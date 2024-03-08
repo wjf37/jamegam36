@@ -1905,7 +1905,7 @@ GameObject:
   - component: {fileID: 1395204351}
   - component: {fileID: 1395204350}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Timer Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1950,7 +1950,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 3:00
+  m_text: 2:00
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e206a4b76b26ec242819beb03dd68cb7, type: 2}
   m_sharedMaterial: {fileID: 2203023481191422783, guid: e206a4b76b26ec242819beb03dd68cb7,
@@ -8482,7 +8482,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isGameActive: 0
-  gameOverFlag: 0
+  gameWon: 0
+  spawnRate: 5
   enemyPrefabs:
   - {fileID: 6646294090067654203, guid: c6e0ceaafdcfd8643aac37b144bb41b4, type: 3}
   - {fileID: 17950024873299476, guid: ae89d1013201ce74a9b946496f5c3d0b, type: 3}
@@ -8496,7 +8497,6 @@ MonoBehaviour:
   - {fileID: 827561072}
   - {fileID: 1166557841}
   pauseScreen: {fileID: 2104873661}
-  spawnRate: 5
   player: {fileID: 512768591}
   candleStandard: {fileID: 1005586626}
   candleCalm: {fileID: 644691139}
@@ -8683,7 +8683,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31a0f3d9194da9d4db9919083717bdaf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeRemaining: 180
+  timeRemaining: 120
   timeText: {fileID: 1395204350}
 --- !u!4 &2112140963
 Transform:

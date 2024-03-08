@@ -28,7 +28,6 @@ public class SpriteOutline : MonoBehaviour {
 
 	void OnDisable() {
 		spriteRenderer.sharedMaterial = _preMat;
-		Debug.Log("disabled");
 	}
 
 	public void UpdateOutline(float outline) {

@@ -21,7 +21,6 @@ public class AnimationPlayer : MonoBehaviour
         
     }
     public void ChooseAnim(string animName){
-        Debug.Log("PlayAnim");//names "basicAttack" "counterSpear" "counterSword" "deflectSpear" "deflectSword"
         spriteRenderer.forceRenderingOff = true;
         audioSource.PlayOneShot(swingWeapon);
         animator.SetTrigger(animName);

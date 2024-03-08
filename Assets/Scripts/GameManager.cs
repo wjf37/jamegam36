@@ -7,21 +7,20 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public bool isGameActive;
-    public bool gameOverFlag = false;
-    public List<GameObject> enemyPrefabs;
-    public List<GameObject> spawnLocs;
-    public GameObject pauseScreen;
-    public float spawnRate = 5f;
-    public GameObject player;
-    public GameObject candleStandard;
-    public GameObject candleCalm;
-    public GameObject candleCrazy;
-    public GameObject aimWeapon;
-    public GameObject failScreen;
-    public GameObject winScreen;
-    public Animator playerAnim;
+    public bool gameWon = false;
+    public float spawnRate = 4f;
+    [SerializeField] List<GameObject> enemyPrefabs;
+    [SerializeField] List<GameObject> spawnLocs;
+    [SerializeField] GameObject pauseScreen;
+    [SerializeField] GameObject player;
+    [SerializeField] GameObject candleStandard;
+    [SerializeField] GameObject candleCalm;
+    [SerializeField] GameObject candleCrazy;
+    [SerializeField] GameObject aimWeapon;
+    [SerializeField] GameObject failScreen;
+    [SerializeField] GameObject winScreen;
+    [SerializeField] Animator playerAnim;
     private bool paused = false;
-    private PlayerCombat pCScript;
     private PlayerMovement pMScript;
     private float tScale;
     private AimWeapon aWScript;
@@ -34,7 +33,6 @@ public class GameManager : MonoBehaviour
     {
         isGameActive = true;
         StartCoroutine(SpawnTarget());
-        pCScript = player.GetComponent<PlayerCombat>();
         pMScript = player.GetComponent<PlayerMovement>();
         aWScript = aimWeapon.GetComponent<AimWeapon>();
         tScale = 1f;
@@ -76,11 +74,11 @@ public class GameManager : MonoBehaviour
         //SceneManager.LoadScene(1);
     }
     
-    public  void Win(){
+    public void Win(){
         isGameActive = false;
         Time.timeScale = 0;
         winScreen.SetActive(true);
-        //SceneManager.LoadScene(1);
+        SceneManager.LoadScene(3);
     }
 
     IEnumerator SpawnTarget()
@@ -118,7 +116,7 @@ public class GameManager : MonoBehaviour
         tScale = 0.5f;
         Time.timeScale = tScale;
         pMScript.speed = 6;
-        aWScript.cooldownDuration = 0.25f;
+        aWScript.cooldownDuration = 0.15f;
         aWScript.counterDuration = 0.5f;
         aWScript.baseDamage = 80;
         playerAnim.SetFloat("animSpeed",2f);

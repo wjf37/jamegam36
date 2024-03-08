@@ -119,7 +119,6 @@ public class EnemyCombat : MonoBehaviour
         if (inRange){
             playerCombat.TakeDamage(40);
         }
-        Debug.Log("Enemy is attacking!");
         enemyRb.constraints &= ~RigidbodyConstraints2D.FreezePosition;
 
         attackSprite.enabled = false;

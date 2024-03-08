@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Timer : MonoBehaviour
 {
-    public float timeRemaining = 180f;
+    public float timeRemaining = 120f;
     public TextMeshProUGUI timeText;
     private bool timerRunning = false;
     private GameManager gameManager;
@@ -37,11 +37,9 @@ public class Timer : MonoBehaviour
         }
 
         if (timeRemaining<60){
-            gameManager.spawnRate = 4f;
+            gameManager.spawnRate = 3f;
         }
-        // else if (timeRemaining<120){
-        //     gameManager.spawnRate = 4f;
-        // }
+
     }
 
     void DisplayTime(float timeRemaining){
