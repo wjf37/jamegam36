@@ -9,6 +9,7 @@ public class CandleScript : MonoBehaviour
     public bool colliding = false;
     public GameObject tooltipManager;
     private TooltipManager tooltipScript;
+    [SerializeField] int sceneNum = 2;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,7 +21,7 @@ public class CandleScript : MonoBehaviour
     {
         tooltipScript.ShowTooltip(colliding);
         if (colliding == true && Input.GetKeyDown(KeyCode.E)){
-                SceneManager.LoadScene(2);
+                SceneManager.LoadScene(sceneNum);
         }
     }
 
@@ -35,5 +36,7 @@ public class CandleScript : MonoBehaviour
             colliding = false;
         }
     }
+    
+
 
 }

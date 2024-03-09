@@ -1,0 +1,120 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &6037983195491114883
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2802040127360375708, guid: ef2cdcceb19c3154c9fb06afb2d4c857,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 8e385d485623ee643b884915c132898f,
+        type: 3}
+    - target: {fileID: 2948441354746532043, guid: ef2cdcceb19c3154c9fb06afb2d4c857,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.00033056736
+      objectReference: {fileID: 0}
+    - target: {fileID: 2948441354746532043, guid: ef2cdcceb19c3154c9fb06afb2d4c857,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.65
+      objectReference: {fileID: 0}
+    - target: {fileID: 2948441354746532043, guid: ef2cdcceb19c3154c9fb06afb2d4c857,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2948441354746532043, guid: ef2cdcceb19c3154c9fb06afb2d4c857,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2948441354746532043, guid: ef2cdcceb19c3154c9fb06afb2d4c857,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2948441354746532043, guid: ef2cdcceb19c3154c9fb06afb2d4c857,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2948441354746532043, guid: ef2cdcceb19c3154c9fb06afb2d4c857,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2948441354746532043, guid: ef2cdcceb19c3154c9fb06afb2d4c857,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2948441354746532043, guid: ef2cdcceb19c3154c9fb06afb2d4c857,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2948441354746532043, guid: ef2cdcceb19c3154c9fb06afb2d4c857,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4005796673456081764, guid: ef2cdcceb19c3154c9fb06afb2d4c857,
+        type: 3}
+      propertyPath: sceneNum
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4778004694778457073, guid: ef2cdcceb19c3154c9fb06afb2d4c857,
+        type: 3}
+      propertyPath: m_Name
+      value: Candle Unlit Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 5120989787310445781, guid: ef2cdcceb19c3154c9fb06afb2d4c857,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7141884352248680062, guid: ef2cdcceb19c3154c9fb06afb2d4c857,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8642106479144932564, guid: ef2cdcceb19c3154c9fb06afb2d4c857,
+        type: 3}
+      propertyPath: m_text
+      value: Press 'E' to wait until night
+      objectReference: {fileID: 0}
+    - target: {fileID: 8642106479144932564, guid: ef2cdcceb19c3154c9fb06afb2d4c857,
+        type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: ce20f06bdd2172d4da8e459d449a91f1,
+        type: 2}
+    - target: {fileID: 8642106479144932564, guid: ef2cdcceb19c3154c9fb06afb2d4c857,
+        type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 1975081247066274518, guid: ce20f06bdd2172d4da8e459d449a91f1,
+        type: 2}
+    - target: {fileID: 8642106479144932564, guid: ef2cdcceb19c3154c9fb06afb2d4c857,
+        type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9159718133897988772, guid: ef2cdcceb19c3154c9fb06afb2d4c857,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 5120989787310445781, guid: ef2cdcceb19c3154c9fb06afb2d4c857, type: 3}
+    - {fileID: 7141884352248680062, guid: ef2cdcceb19c3154c9fb06afb2d4c857, type: 3}
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ef2cdcceb19c3154c9fb06afb2d4c857, type: 3}
