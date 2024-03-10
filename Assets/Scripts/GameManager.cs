@@ -78,7 +78,6 @@ public class GameManager : MonoBehaviour
         isGameActive = false;
         Time.timeScale = 0;
         winScreen.SetActive(true);
-        SceneManager.LoadScene(3);
     }
 
     IEnumerator SpawnTarget()
@@ -135,8 +134,14 @@ public class GameManager : MonoBehaviour
         playerAnim.SetFloat("animSpeed",1f);
     }
 
-    public void B2Menu(){
-        SceneManager.LoadScene(0);
+    public void WinButton(){
+        SceneManager.LoadScene(3);
         Time.timeScale = 1f;
+    }
+
+    public void LoseButton()
+    {
+        SceneManager.LoadScene(4);
+        Time.timeScale= 1f;
     }
 }

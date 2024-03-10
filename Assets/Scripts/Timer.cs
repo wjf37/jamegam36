@@ -30,7 +30,7 @@ public class Timer : MonoBehaviour
                 else{
                     timeRemaining = 0;
                     timerRunning = false;
-                    gameManager.GameOver();
+                    gameManager.Win();
                     DisplayTime(timeRemaining);
                 }
             }
