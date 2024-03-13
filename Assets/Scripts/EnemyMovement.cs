@@ -1,16 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class EnemyMovement : MonoBehaviour
 {
-    public float maxSpeed = 7f;
-    public float minSpeed = 0.5f;
+    public float maxSpeed = 1f;
+    public float minSpeed = 0.1f;
     public float slowingDistance = 6f;
     private Rigidbody2D enemyRb;
     private Rigidbody2D playerRb;
     private Transform sprite;
     private EnemyCombat enemyCombat;
+    private NavMeshAgent agent;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,13 +20,22 @@ public class EnemyMovement : MonoBehaviour
         playerRb = GameObject.Find("Player").GetComponent<Rigidbody2D>();
         sprite = transform.Find("Enemy Sprite");
         enemyCombat = GetComponent<EnemyCombat>();
+
+        agent = GetComponent<NavMeshAgent>();
+		agent.updateRotation = false;
+		agent.updateUpAxis = false;
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
+        agent.destination = playerRb.position;
         if (!enemyCombat.attackStance){
             ChasePlayer();
+        }
+        else
+        {
+            enemyRb.velocity = Vector3.zero;
         }
     }
 
@@ -34,14 +45,14 @@ public class EnemyMovement : MonoBehaviour
 
         if (distanceToPlayer < slowingDistance){
             float speed = Mathf.Lerp(minSpeed, maxSpeed, Mathf.Pow(distanceToPlayer / slowingDistance, 2));
-            enemyRb.velocity = direction * speed;
+            enemyRb.velocity = agent.velocity*speed*0.1f;
             FlipSprite(direction.x);
         }
-        else{
-            enemyRb.velocity = direction * maxSpeed;
+        else{   
             FlipSprite(direction.x);
         }
         //enemy speed drops off as they get closer to the player
+        //once the enemy gets into slowing distance they boost forward a little bit.
         
     }
     void FlipSprite(float x)
