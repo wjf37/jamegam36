@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Temple Day.unity
     guid: b27595d526ad5bb47baa4f059f8fe1de
+  - enabled: 1
+    path: Assets/Scenes/Temple Lose.unity
+    guid: b49d698e43e5e444084e9caa9972af70
   m_configObjects: {}

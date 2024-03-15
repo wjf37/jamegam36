@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEditor;
 
 public class GameManager : MonoBehaviour
 {
@@ -104,7 +105,7 @@ public class GameManager : MonoBehaviour
         pMScript.speed = 3;
         aWScript.cooldownDuration = 0.5f;
         aWScript.counterDuration = 1f;
-        aWScript.baseDamage = 60;
+        aWScript.baseDamage = 40;
         playerAnim.SetFloat("animSpeed",1f);
     }
 
@@ -143,5 +144,13 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene(4);
         Time.timeScale= 1f;
+    }
+
+    public void ExitGame(){
+    #if UNITY_EDITOR
+        EditorApplication.ExitPlaymode();
+    #else
+        Application.Quit();
+    #endif   
     }
 }
