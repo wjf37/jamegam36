@@ -978,40 +978,8 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 17950024873299476, guid: ae89d1013201ce74a9b946496f5c3d0b,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 782997466}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ae89d1013201ce74a9b946496f5c3d0b, type: 3}
---- !u!1 &782997465 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 17950024873299476, guid: ae89d1013201ce74a9b946496f5c3d0b,
-    type: 3}
-  m_PrefabInstance: {fileID: 782997464}
-  m_PrefabAsset: {fileID: 0}
---- !u!195 &782997466
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 782997465}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.5
-  m_Speed: 3.5
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 2
-  m_BaseOffset: 0
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
 --- !u!1001 &798739257
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1020,6 +988,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 650001752423028900, guid: 08f1ba7e12bbd5445a8c9770029d05f5,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2254026612969654309, guid: 08f1ba7e12bbd5445a8c9770029d05f5,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1075,6 +1048,11 @@ PrefabInstance:
       propertyPath: audioSource
       value: 
       objectReference: {fileID: 1580041722}
+    - target: {fileID: 4207848409363068124, guid: 08f1ba7e12bbd5445a8c9770029d05f5,
+        type: 3}
+      propertyPath: m_BodyType
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4822271967064791960, guid: 08f1ba7e12bbd5445a8c9770029d05f5,
         type: 3}
       propertyPath: healthBar
@@ -2285,7 +2263,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 39daa6bcc5d7a1c4aa225bd84694aac6, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.527
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -8983,40 +8961,8 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 6646294090067654203, guid: c6e0ceaafdcfd8643aac37b144bb41b4,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 3373748600455168926}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c6e0ceaafdcfd8643aac37b144bb41b4, type: 3}
---- !u!1 &3373748600455168925 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6646294090067654203, guid: c6e0ceaafdcfd8643aac37b144bb41b4,
-    type: 3}
-  m_PrefabInstance: {fileID: 3373748600455168924}
-  m_PrefabAsset: {fileID: 0}
---- !u!195 &3373748600455168926
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3373748600455168925}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.5
-  m_Speed: 3.5
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 2
-  m_BaseOffset: 0
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
